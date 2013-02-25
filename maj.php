@@ -118,12 +118,18 @@ while (list($last_update, $galaxy, $system) = $db->sql_fetch_row($result))
 
 <?php
 
-for ($g = 1; $g < 10; $g++) {
+// récuperation des g max et ss max
+$nb_g = $server_config['num_of_galaxies'] + 1;
+$nb_s = $server_config['num_of_systems'] + 1;
+
+ 
+
+for ($g = 1; $g < $nb_g; $g++) {
 	
 	echo '<tr>';
 	echo '<td class="mv-table-cell">G'. $g .'</td>';
 	
-	for ($s = 1; $s < 500; $s++) {
+	for ($s = 1; $s < $nb_s ; $s++) {
 		echo '<td class="mv-jour-'. $universe[$g][$s] .'"></td>';
 		
 		if ($s % 50 == 0) {
