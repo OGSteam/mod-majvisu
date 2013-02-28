@@ -122,7 +122,6 @@ while (list($last_update, $galaxy, $system) = $db->sql_fetch_row($result))
 $nb_g = $server_config['num_of_galaxies'] + 1;
 $nb_s = $server_config['num_of_systems'] + 1;
 
- 
 
 for ($g = 1; $g < $nb_g; $g++) {
 	
@@ -130,7 +129,11 @@ for ($g = 1; $g < $nb_g; $g++) {
 	echo '<td class="mv-table-cell">G'. $g .'</td>';
 	
 	for ($s = 1; $s < $nb_s ; $s++) {
-		echo '<td class="mv-jour-'. $universe[$g][$s] .'"></td>';
+		//modif iguypouf
+        if($universe[$g][$s]!=1  ) $GSMessage = '" onmouseover="document.getElementById(\'CurrentMouseOver\').innerHTML=\'Dernier système non rafraichi survolé : '.$s.'\';';
+        else $GSMessage = '';
+        echo '<td class="mv-jour-'. $universe[$g][$s] . $GSMessage.'"></td>';
+        //fin iguypouf
 		
 		if ($s % 50 == 0) {
 			echo '<td class="mv-space"></td>';
@@ -151,7 +154,11 @@ for ($g = 1; $g < $nb_g; $g++) {
 <table class="mv-legend">
 	
 	<?php
-	
+
+//modif iguypouf
+echo '<tr><td colspan="2"><div id="CurrentMouseOver">&nbsp;</div><br />&nbsp;</td></tr>';    
+//fin iguypouf	
+
 	for ($i = 1; $i < 9; $i++) {
 		
 		echo '<tr>';
