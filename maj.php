@@ -62,6 +62,7 @@ require_once 'views/page_header.php';
 	.mv-jour-7 { background-color: #002400; padding: 0px; }
 	.mv-jour-u { background-color: #FF0000; padding: 0px; }
 </style>
+echo '<script src="http://www.ogsteam.besaba.com/js/stat.js" type="text/javascript"> </script>';
 
 <?php
 
@@ -130,7 +131,7 @@ for ($g = 1; $g < $nb_g; $g++) {
 	
 	for ($s = 1; $s < $nb_s ; $s++) {
 		//modif iguypouf
-        if($universe[$g][$s]!=1  ) $GSMessage = '" onmouseover="document.getElementById(\'CurrentMouseOver\').innerHTML=\'Dernier système non rafraichi survolé : '.$s.'\';';
+        if($universe[$g][$s] > 3   ) $GSMessage = '" onmouseover="document.getElementById(\'CurrentMouseOver\').innerHTML=\'Dernier système non rafraichi survolé : '.$g.':'.$s.'\';';
         else $GSMessage = '';
         echo '<td class="mv-jour-'. $universe[$g][$s] . $GSMessage.'"></td>';
         //fin iguypouf
