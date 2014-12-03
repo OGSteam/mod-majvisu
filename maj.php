@@ -68,7 +68,7 @@ echo '<script src="http://www.ogsteam.besaba.com/js/stat.js" type="text/javascri
 
 $query = 'SELECT active FROM '. TABLE_MOD .' WHERE action = \'majvisu\' AND active = \'1\' LIMIT 1';
 if (!$db->sql_numrows($db->sql_query($query))) {
-	exit('Mod non activÈ!');
+	exit('Mod non activ√©!');
 }
 
 // variable de temps
@@ -119,7 +119,7 @@ while (list($last_update, $galaxy, $system) = $db->sql_fetch_row($result))
 
 <?php
 
-// rÈcuperation des g max et ss max
+// r√©cuperation des g max et ss max
 $nb_g = $server_config['num_of_galaxies'] + 1;
 $nb_s = $server_config['num_of_systems'] + 1;
 
@@ -131,7 +131,7 @@ for ($g = 1; $g < $nb_g; $g++) {
 	
 	for ($s = 1; $s < $nb_s ; $s++) {
 		//modif iguypouf
-        if($universe[$g][$s] > 3   ) $GSMessage = '" onmouseover="document.getElementById(\'CurrentMouseOver\').innerHTML=\'Dernier systËme non rafraichi survolÈ : '.$g.':'.$s.'\';';
+        if($universe[$g][$s] > 3   ) $GSMessage = '" onmouseover="document.getElementById(\'CurrentMouseOver\').innerHTML=\'Dernier syst√®me non rafraichi survol√© : '.$g.':'.$s.'\';';
         else $GSMessage = '';
         echo '<td class="mv-jour-'. $universe[$g][$s] . $GSMessage.'"></td>';
         //fin iguypouf
@@ -164,7 +164,7 @@ echo '<tr><td colspan="2"><div id="CurrentMouseOver">&nbsp;</div><br />&nbsp;</t
 		
 		echo '<tr>';
 		echo '<td class="mv-color mv-jour-'. ($i == 8 ? 'u' : $i) .'"></td>';
-		echo '<td class="mv-legend-cell">'. ($i == 8 ? 'jamais scannÈ' : 'moins de '. $i .' jour'. ($i == 1 ? '' : 's')) .'</td>';
+		echo '<td class="mv-legend-cell">'. ($i == 8 ? 'jamais scann√©' : 'moins de '. $i .' jour'. ($i == 1 ? '' : 's')) .'</td>';
 		echo '</tr>';
 		
 	}
@@ -175,7 +175,7 @@ echo '<tr><td colspan="2"><div id="CurrentMouseOver">&nbsp;</div><br />&nbsp;</t
 
 <p>
 	<br />
-	Module de visualisation des mises ‡ jour de l'univers par <b>Machine</b> tirÈ du portail OGPT<br />
+	Module de visualisation des mises √† jour de l'univers par <b>Machine</b> tir√© du portail OGPT<br />
 	Version 1.2.1
 </p>
 
