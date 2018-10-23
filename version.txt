@@ -1,3 +1,4 @@
 majvisu
-1.2.3
+1.2.4
 majvisu,Etat de l\'univers,majvisu,majvisu,maj.php,1,0
+3.3.2
