@@ -62,7 +62,6 @@ require_once 'views/page_header.php';
 	.mv-jour-7 { background-color: #002400; padding: 0px; }
 	.mv-jour-u { background-color: #FF0000; padding: 0px; }
 </style>
-echo '<script src="http://www.ogsteam.besaba.com/js/stat.js" type="text/javascript"> </script>';
 
 <?php
 
